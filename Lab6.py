@@ -1,4 +1,6 @@
 # Mohana M
+# esson six
+# # Python och AI
 # Lab 6
 # Part A - 
 
