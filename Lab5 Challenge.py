@@ -402,29 +402,30 @@ if __name__ == "__main__":
     print(format_report_to_string(report_dict))
 
 
-# ==============================================================================
-# DESIGN CHALLENGE (EXPLANATIONS & REFLECTIONS)
-# ==============================================================================
-
-"""
-DESIGN REFLECTIONS
+==============================================================================
+LAB 5 CHALLENGE: DESIGN REFLECTIONS
+==============================================================================
 
 1. CHOICE 1: process_order(customer_id, *product_ids, express=False, discount_percent=0.0, **custom_settings)
-   • Choice: Used explicit parameter for 'customer_id', *args for 'product_ids', named keyword defaults for flags, and **kwargs for extra settings.
-   • Alternative considered: Accepting a single list of product IDs as a parameter: process_order(customer_id, product_id_list, ...).
-   • Justification: Using *product_ids allows calling the function naturally with comma-separated IDs (e.g., process_order("C1", "P1", "P2")) while still allowing positional unpacking (*cart_items) when a list already exists.
+   • Choice: Explicit parameter for 'customer_id', *args for 'product_ids', named keyword defaults for flags, and **kwargs for extra settings.
+   • Alternative Considered: Accepting a single list parameter for products: process_order(customer_id, product_id_list, ...).
+   • Justification: Using *product_ids allows calling the function naturally with positional items 
+   (e.g., process_order("C1", "P1", "P2")) while still supporting positional unpacking (*cart_items) when a list already exists.
 
 2. CHOICE 2: order_summary(order_id, customer_name, *notes, **metadata)
    • Choice: Explicit parameters for required identifying fields (order_id, customer_name), *args for notes, and **kwargs for flexible metadata.
-   • Alternative considered: Passing a single dictionary containing all summary details.
+   • Alternative Considered: Passing a single dictionary containing all summary details.
    • Justification: Explicit required fields prevent generating malformed summaries missing critical IDs, while *notes and **metadata keep notes and tags readable without creating rigid dictionary keys.
 
 3. CHOICE 3: update_revenue(current_revenue, order_total)
    • Choice: Explicit normal parameters returning a new float value.
-   • Alternative considered: Using 'global total_daily_revenue' inside the function to mutate state directly.
+   • Alternative Considered: Using 'global total_daily_revenue' inside the function to mutate state directly.
    • Justification: Returning values explicitly makes functions pure, prevents unintended global side effects, and makes testing and debugging predictable.
 
 4. POOR USE CASE FOR *args / **kwargs (IDENTIFIED PLACE TO AVOID):
-   • Example: create_discount_calculator(discount_percent) or register_customer_profile(name, email).
-   • Explanation: If register_customer_profile used **kwargs (e.g., def register_customer_profile(**details)), callers wouldn't know which fields are mandatory (like 'name' or 'email') without checking internal code. Explicit named parameters provide better self-documentation, IDE autocomplete support, and immediate syntax errors when required arguments are omitted.
+   • Example: register_customer_profile(name, email) or create_discount_calculator(discount_percent).
+   • Explanation: If register_customer_profile used **kwargs (e.g., def register_customer_profile(**details)), callers wouldn't know which fields are mandatory 
+   (like 'name' or 'email') without checking internal code. Explicit named parameters provide self-documentation, 
+   IDE autocomplete support, and immediate syntax errors when required arguments are omitted.
 """
+
