@@ -1,3 +1,10 @@
+# Mohana Muruganandham
+# # Lesson One
+# # Python och AI
+
+# Lab 1
+
+
 print("Mohana Muruganandham")
 
 print("Python and AI")
