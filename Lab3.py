@@ -3,13 +3,6 @@
 # Lesson Three
 
 # Lab 3 - Collections in Python
-
-
-
-
-
-
-
 # Part A - Conditions
 
 # Write a program that classifies a number as positive, negative or zero.
@@ -867,10 +860,7 @@ for ch in sentence :
 print(count)
 
 print()
-
-
-
-
+--------------------------------------------
 
 # 3
 
@@ -897,8 +887,6 @@ print(f"originals : {originals}")
 print(f"duplicates : {duplicates}")
 
 print()
-
-
 
 
 
