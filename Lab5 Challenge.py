@@ -1,3 +1,10 @@
+
+# Mohana Muruganandham
+# # Lesson Five Challenge
+# # Python och AI
+
+# Lab 5  Challenge
+
 # ==========================================
 # PART 1: PRODUCTS AND CUSTOMERS DATA
 # ==========================================
