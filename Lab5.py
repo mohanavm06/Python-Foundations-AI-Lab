@@ -1,4 +1,4 @@
-# Mohana Muruganandham
+# Mohana M
 # Lab 5
 # Part A - Scope
 def show_local():
