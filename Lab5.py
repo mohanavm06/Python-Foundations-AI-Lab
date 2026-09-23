@@ -1,5 +1,6 @@
 # Mohana M
 # Lab 5
+# # Python och AI
 # Part A - Scope
 def show_local():
     course_name = "Java Developer"  # local — shadows the global
@@ -286,8 +287,105 @@ print()
 print(summarize_report(report2))
 print("Ord i Q3:", count_words(*report1["sections"]))
 
-# Part G - Stretch challenges
-# Write merge_settings(defaults, **overrides) returning a new dictionary without modifying defaults.
-# Write call_summary(function_name, *args, **kwargs) returning a string describing what would be called.
-# Write a flexible statistics function that returns count, total, average, min and max for *numbers. Implement the calculations manually where reasonable.
-# Create five "predict the output" scope questions and verify your predictions.
+# ==============================================================================
+# 1. MERGE SETTINGS
+# ==============================================================================
+
+def merge_settings(defaults, **overrides):
+    """
+    Merges default settings with keyword override settings without 
+    modifying the original defaults dictionary.
+    """
+    # Create a shallow copy to keep the function pure and avoid modifying 'defaults'
+    merged = defaults.copy()
+    merged.update(overrides)
+    return merged
+
+
+# ==============================================================================
+# 2. CALL SUMMARY
+# ==============================================================================
+
+def call_summary(function_name, *args, **kwargs):
+    """
+    Returns a string representation of a function call given its name,
+    positional arguments (*args), and keyword arguments (**kwargs).
+    """
+    formatted_args = [repr(arg) for arg in args]
+    formatted_kwargs = [f"{key}={repr(val)}" for key, val in kwargs.items()]
+    
+    # Combine positional and keyword arguments
+    all_params = ", ".join(formatted_args + formatted_kwargs)
+    return f"{function_name}({all_params})"
+
+
+# ==============================================================================
+# 3. FLEXIBLE STATISTICS FUNCTION
+# ==============================================================================
+
+def calculate_stats(*numbers):
+    """
+    Calculates count, total, average, min, and max for variable numbers.
+    All calculations are implemented manually using simple iteration.
+    """
+    if not numbers:
+        return {
+            "count": 0,
+            "total": 0,
+            "average": 0.0,
+            "min": None,
+            "max": None
+        }
+
+    count = 0
+    total = 0.0
+    min_val = numbers[0]
+    max_val = numbers[0]
+
+    for num in numbers:
+        count += 1
+        total += num
+
+        if num < min_val:
+            min_val = num
+        if num > max_val:
+            max_val = num
+
+    average = total / count
+
+    return {
+        "count": count,
+        "total": total,
+        "average": average,
+        "min": min_val,
+        "max": max_val
+    }
+
+
+# ==============================================================================
+# DEMONSTRATION OF STRETCH CHALLENGES
+# ==============================================================================
+
+if __name__ == "__main__":
+    print("=== 1. MERGE SETTINGS DEMO ===")
+    default_config = {"theme": "light", "notifications": True, "volume": 80}
+    updated_config = merge_settings(default_config, theme="dark", volume=100, language="EN")
+
+    print("Original Defaults:", default_config)
+    print("Updated Config:   ", updated_config)
+    print("Defaults unmodified?", default_config == {"theme": "light", "notifications": True, "volume": 80})
+    print()
+
+    print("=== 2. CALL SUMMARY DEMO ===")
+    summary1 = call_summary("process_order", "C101", "P202", express=True, discount=10)
+    summary2 = call_summary("send_email", "alice@example.com", subject="Welcome!")
+    print("Summary 1:", summary1)
+    print("Summary 2:", summary2)
+    print()
+
+    print("=== 3. FLEXIBLE STATISTICS DEMO ===")
+    stats = calculate_stats(10, 25, 4, 88, 13, 50)
+    print("Calculated Stats:")
+    for key, value in stats.items():
+        print(f"  • {key}: {value}")
+    print()
