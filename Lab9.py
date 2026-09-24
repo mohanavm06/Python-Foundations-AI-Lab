@@ -8,7 +8,9 @@
 #                          ↑
 #                   same method name
 #                   different behaviour
+# ==========================================
 # Part A - Polymorphism
+# ==========================================
 # 1. Create three classes
 class EmailNotification:
     # 2. Give all three classes a method called send() with a different return message
@@ -40,7 +42,9 @@ classes implement the same method signature (`send()`).
 As long as every object in the list responds to the `.send()` method call, the loop 
 can treat them uniformly without needing to check their specific type or class.
 """
+# ==========================================
 # Part B - Polymorphism with inheritance
+# ==========================================
 # 1. Base class Document with title attribute and describe() method
 class Document:
     def __init__(self,title):
