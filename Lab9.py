@@ -47,4 +47,10 @@ class Document:
         self.title = title
     def describe(self):
         return f"Document: {self.title}"
+# 2. Subclasses inheriting from Document
+class PDFDoucment(Document):
+# 3. Override describe() method
+    def describe(self):
+        return f"PDF Document: '{self.title}' (Portable Document Format, read-only layout)"
+        
 
