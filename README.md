@@ -431,11 +431,13 @@ The system demonstrates:
 * IS-A relationships
 
 ----------------------------------------------
-**Technologies**
+**TechnologiesUsed** 
 Python 3
 VS Code
 Git
 GitHub
+Terminal
+macOS
 
 ----------------------------------------------
 
