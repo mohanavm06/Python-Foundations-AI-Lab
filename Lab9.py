@@ -104,4 +104,6 @@ is_string = isinstance(admin,str)
 print(f"Is instance of AdminUser? {is_admin}")
 print(f"Is instance of admin? {is_user}")
 print(f"Is instance of str? {is_string}")       
-
+# ==========================================
+# Part E -  __str__
+# ==========================================
