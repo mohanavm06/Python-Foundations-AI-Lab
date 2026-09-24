@@ -126,7 +126,7 @@ print("---Part E:---- __str___")
 print(p1)
 print(p2)
 print(p3)
-# 5. Use str() on one Product object, store in a variable and print its type    
+# 5. Use str() on one Product object, store it in a variable and print its type    
 product_string = str(p1)
 print(f"String output:{product_string}")
 print(f"Type of result: {type(product_string)}")
@@ -150,3 +150,10 @@ class SavingsAccount:
     def __str__(self):
         # Optionally use super().__str__() to avoid repeating parent string formatting
         return f"{super().__str__} | Interestrate:{self.interest_rate}%"
+        # 5. Create and print both an Account and a SavingsAccount object
+print("\n--- Part F: __str__ with inheritance ---")
+base_account = Account("Alice Smith", 1500.00)
+savings_account = SavingsAccount("Bob Jones", 5000.00, 3.5)
+
+print(base_account)
+print(savings_account)
