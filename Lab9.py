@@ -107,53 +107,65 @@ print(f"Is instance of str? {is_string}")
 # ==========================================
 # Part E -  __str__
 # ==========================================
+# 1. Create a Product class with name and price
 class Product:
-    def __init__(self,name,price):
+    def __init__(self, name, price):
         self.name = name
         self.price = price
-# 3. Add __str__ for a human-readable description
-    def __str__(self):
-        return f"Product: {self.name} | Price: ${self.price:.2f}"
-# 2. Observe printing before __str__ is defined:
-# Without __str__, printing an object outputs its memory address:
-# <__main__.Product object at 0x7f9a1020d9d0>
-# 4. Create at least three Product objects and print them
-p1=Product("Laptop",30000.00)
-p2=Product("Wireless Mouse",13000.25)
-p3=Product("Mechanical Keyboard",750.75)
 
-print("---Part E:---- __str___")
+    # 3. Add __str__ so printing the Product gives a useful human-readable description
+    def __str__(self):
+        return f"Product: {self.name}, Price: {self.price} SEK"
+
+
+# 2. Observe printing before __str__ is defined:
+# Without __str__, printing an object outputs its class name and memory address:
+# <__main__.Product object at 0x0000022570356F90>
+# Python only knows where the object is stored, not what its data represents.
+
+# 4. Create at least three Product objects and print them
+p1 = Product("Macbook", 35000)
+p2 = Product("Logictech", 3000)
+p3 = Product("Mechanical keyboard", 6000)
+
+print("--- Part E: __str__ ---")
 print(p1)
 print(p2)
 print(p3)
-# 5. Use str() on one Product object, store it in a variable and print its type    
-product_string = str(p1)
-print(f"String output:{product_string}")
+
+# 5. Use str() on one Product object, store the result in a variable and print its type
+product_string = str(p2)
+print(f"\nString output: {product_string}")
 print(f"Type of result: {type(product_string)}")
 # ==========================================
 # Part F - __str__ with inheritance
 # ==========================================
+
 # 1. Base class Account with owner and balance
 class Account:
-    def __init__(self,owner,balance):
+    def __init__(self, owner, balance):
         self.owner = owner
         self.balance = balance
-# 2. Add __str__ to Account
-    def __str__(self):
-        return f"Account Owner: {self.owner} | Balance: ${self.balance:.2f}"
-# 3. Subclass SavingsAccount inheriting from Account
-class SavingsAccount:
-    def __init__(self,owner,balance,interest_rate):
-        super().__init__(owner,balace)
-        self.interest_rate=interest_rate
-# 4. Override __str__ to include the interest rate
-    def __str__(self):
-        # Optionally use super().__str__() to avoid repeating parent string formatting
-        return f"{super().__str__} | Interestrate:{self.interest_rate}%"
-        # 5. Create and print both an Account and a SavingsAccount object
-print("\n--- Part F: __str__ with inheritance ---")
-base_account = Account("Alice Smith", 1500.00)
-savings_account = SavingsAccount("Bob Jones", 5000.00, 3.5)
 
-print(base_account)
-print(savings_account)
+    # 2. Add __str__ to Account
+    def __str__(self):
+        return f"Account Owner: {self.owner} | Balance: {self.balance} SEK"
+
+
+# 3. Subclass SavingsAccount inheriting from Account
+class SavingsAccount(Account):
+    def __init__(self, owner, balance, interest_rate):
+        super().__init__(owner, balance)
+        self.interest_rate = interest_rate
+
+    # 4. Override __str__ to include the interest rate
+    def __str__(self):
+        return f"{super().__str__()} | Interest Rate: {self.interest_rate:.1%}"
+
+
+# 5. Create and print both objects inside a loop
+account_1 = Account("Sambath", 25000)
+savings_account_1 = SavingsAccount("Mohana", 30000, 0.035)
+
+for account in [account_1, savings_account_1]:
+    print(account)
