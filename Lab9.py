@@ -169,3 +169,59 @@ savings_account_1 = SavingsAccount("Mohana", 30000, 0.035)
 
 for account in [account_1, savings_account_1]:
     print(account)
+# ==========================================
+# Part G - Inheritance or composition?
+# ==========================================
+
+# 1. Create CPU with a model attribute
+class CPU:
+    def __init__(self, model):
+        self.model = model
+
+
+# 2. Create Computer with brand and a CPU object (Composition)
+class Computer:
+    def __init__(self, brand, cpu):
+        self.brand = brand
+        self.cpu = cpu  # Computer HAS-A CPU object inside it
+
+
+# 3. Create a CPU object and pass it to a Computer object
+cpu_1 = CPU("Intel Core i7 processor")
+computer_c = Computer("Apple Macbook Pro", cpu_1)
+
+# 4. Print the computer brand and CPU model through the Computer object
+print(f"Computer Brand: {computer_c.brand}")
+print(f"CPU Model:      {computer_c.cpu.model}")
+
+# ==========================================
+# 5. Explanation: HAS-A vs IS-A
+# ==========================================
+"""
+EXPLANATION:
+"Computer HAS-A CPU" makes more sense than "Computer IS-A CPU" because a computer 
+is a complex system made up of smaller components (CPU, RAM, Hard Drive), one of 
+which is a processor. 
+
+If we used inheritance ("Computer IS-A CPU"), a Computer would be forced to inherit 
+all properties and behaviour of a CPU directly, implying a Computer is simply a specialised 
+type of processor. In reality, a CPU is just a part inside a computer, which is the 
+definition of Composition (HAS-A).
+"""
+
+# ==========================================
+# 6. Inheritance (IS-A) vs Composition (HAS-A) Pairs
+# ==========================================
+"""
+1. Car / Engine    -> Composition (HAS-A)
+   A Car is not a type of Engine; a Car HAS-AN Engine as a component.
+
+2. Manager / Employee -> Inheritance (IS-A)
+   A Manager IS-AN Employee with extra permissions and specialized duties.
+
+3. Course / Teacher  -> Composition (HAS-A)
+   A Course is not a type of Teacher; a Course HAS-A Teacher assigned to teach it.
+
+4. Phone / Device   -> Inheritance (IS-A)
+   A Phone IS-A specialized type of Device (it inherits general electronic device traits).
+"""
