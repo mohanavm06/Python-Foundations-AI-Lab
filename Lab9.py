@@ -52,5 +52,20 @@ class PDFDoucment(Document):
 # 3. Override describe() method
     def describe(self):
         return f"PDF Document: '{self.title}' (Portable Document Format, read-only layout)"
+class TextDocument(Document):
+    def describe(self):
+        return f"TextDocument: '{self.title}'(Plain Text formate, easily editable)"
+# 4. Create several PDFDocument and TextDocument objects in one list
+documents = [
+    PDFDocument("Mohana.pdf"),
+    TextDocument("Notes.txt"),
+    PDFDocument("User_Manual.pdf"),
+    TextDocument("TodoList.txt")
+]
+
+# 5. Loop through the list and print each title and describe() result. 
+for doc in documents:
+    print(f"Title: '{doc.title}' | Description: {doc.describe()}")
+
         
 
