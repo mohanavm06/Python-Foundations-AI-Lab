@@ -35,9 +35,16 @@ for notification in notifications:
 EXPLANATION:
 This loop relies on Polymorphism (specifically dynamic duck typing in Python). 
 The loop does not need to know the exact class of each object because all three 
-classes implement the exact same method signature (`send()`). 
+classes implement the same method signature (`send()`). 
 
 As long as every object in the list responds to the `.send()` method call, the loop 
 can treat them uniformly without needing to check their specific type or class.
 """
 # Part B - Polymorphism with inheritance
+# 1. Base class Document with title attribute and describe() method
+class Document:
+    def __init__(self,title):
+        self.title = title
+    def describe(self):
+        return f"Document: {self.title}"
+
