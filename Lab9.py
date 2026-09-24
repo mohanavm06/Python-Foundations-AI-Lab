@@ -66,6 +66,23 @@ documents = [
 # 5. Loop through the list and print each title and describe() result. 
 for doc in documents:
     print(f"Title: '{doc.title}' | Description: {doc.describe()}")
+    
+# ==========================================
+# Part C - Duck Typing
+# ==========================================
 
+# 1. Create two unrelated classes (no shared base class or inheritance)
+class Printer:
+# 2. Add display_status() method
+    def display_status(self):
+        return "Status: Online - Ink level 85%, Paper tray loaded."
+class Screen:
+    def display_status(self):
+        return "Printer Status: Active - Resolution 1920x1080, Brightness 75%."
+devices =[Printer(),Screen()]
+
+print("--- Part C: Duck Typing ---")
+for device in devices:
+    print(device.display_status())
         
 
