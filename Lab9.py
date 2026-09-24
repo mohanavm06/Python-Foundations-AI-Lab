@@ -107,3 +107,29 @@ print(f"Is instance of str? {is_string}")
 # ==========================================
 # Part E -  __str__
 # ==========================================
+class Product:
+    def __init__(self,name,price):
+        self.name = name
+        self.price = price
+# 3. Add __str__ for a human-readable description
+    def __str__(self):
+        return f"Product: {self.name} | Price: ${self.price:.2f}"
+# 2. Observe printing before __str__ is defined:
+# Without __str__, printing an object outputs its memory address:
+# <__main__.Product object at 0x7f9a1020d9d0>
+# 4. Create at least three Product objects and print them
+p1=Product("Laptop",30000.00),
+p2=Product("Wireless Mouse",13000.25)
+p3=Product("Mechanical Keyboard",750.75)
+
+print("---Part E:---- __str___")
+print(p1)
+print(p2)
+print(p3)
+# 5. Use str() on one Product object, store in a variable and print its type    
+product_string = str(p1)
+print(f"String output:{product_string}")
+print(f"Type of result: {type(product_string)}")
+# ==========================================
+# Part F - __str__ with inheritance
+# ==========================================
