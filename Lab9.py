@@ -92,5 +92,16 @@ for device in devices:
 # ==========================================
 # Part D - isinstance()
 # ==========================================
-        
+class User:
+    pass
+class AdminUser(User):
+    pass
+admin = AdminUser()
+print("--- Part D: isinstance() ---")
+is_admin = isinstance(admin,AdminUser)
+is_user =  isinstance(admin, User)
+is_string = isinstance(admin,str)
+print(f"Is instance of AdminUser? {is_admin}")
+print(f"Is instance of admin? {is_user}")
+print(f"Is instance of str? {is_string}")       
 
