@@ -133,3 +133,20 @@ print(f"Type of result: {type(product_string)}")
 # ==========================================
 # Part F - __str__ with inheritance
 # ==========================================
+# 1. Base class Account with owner and balance
+class Account:
+    def __init__(self,owner,balance):
+        self.owner = owner
+        self.balance = balance
+# 2. Add __str__ to Account
+    def __str__(self):
+        return f"Account Owner: {self.owner} | Balance: ${self.balance:.2f}"
+# 3. Subclass SavingsAccount inheriting from Account
+class SavingsAccount:
+    def __init__(self,owner,balance,interest_rate):
+        super().__init__(owner,balace)
+        self.interest_rate=interest_rate
+# 4. Override __str__ to include the interest rate
+    def __str__(self):
+        # Optionally use super().__str__() to avoid repeating parent string formatting
+        return f"{super().__str__} | Interestrate:{self.interest_rate}%"
