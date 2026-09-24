@@ -118,7 +118,7 @@ class Product:
 # Without __str__, printing an object outputs its memory address:
 # <__main__.Product object at 0x7f9a1020d9d0>
 # 4. Create at least three Product objects and print them
-p1=Product("Laptop",30000.00),
+p1=Product("Laptop",30000.00)
 p2=Product("Wireless Mouse",13000.25)
 p3=Product("Mechanical Keyboard",750.75)
 
