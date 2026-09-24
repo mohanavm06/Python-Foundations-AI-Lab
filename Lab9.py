@@ -88,5 +88,9 @@ devices =[Printer(),Screen()]
 print("--- Part C: Duck Typing ---")
 for device in devices:
     print(device.display_status())
+
+# ==========================================
+# Part D - isinstance()
+# ==========================================
         
 
