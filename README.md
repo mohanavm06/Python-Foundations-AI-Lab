@@ -312,8 +312,8 @@ Created a dataset containing messy product information and cleaned it.
 
 Tasks included:
 
-* Normalizing product names
-* Normalizing categories
+* Normalising product names
+* Normalising categories
 * Filtering in-stock products
 * Finding unique categories
 * Calculating inventory value
@@ -430,16 +430,196 @@ The system demonstrates:
 * Validation
 * IS-A relationships
 
-----------------------------------------------
-**TechnologiesUsed** 
-Python 3
-VS Code
-Git
-GitHub
-Terminal
-macOS
+---
 
-----------------------------------------------
+## Lab 9 – Polymorphism and Composition
+
+Lab9 focused on advanced object-oriented relationships.
+
+### Topics Covered
+
+* Polymorphism
+* Polymorphism with inheritance
+* Duck typing
+* `isinstance()`
+* `__str__`
+* Method overriding
+* Composition
+* IS-A relationships
+* HAS-A relationships
+
+### Exercises
+
+Examples include notification classes with the same `send()` method:
+
+* `EmailNotification`
+* `SMSNotification`
+* `PushNotification`
+
+Each object can be handled using the same calling code even though the implementation is different.
+
+### Duck Typing
+
+Practiced using unrelated classes that provide the same method.
+
+This demonstrates that Python often focuses on an object's behaviour rather than requiring a specific inheritance relationship.
+
+### `__str__`
+
+Added human-readable string representations to classes such as:
+
+* `Product`
+* `Account`
+* `SavingsAccount`
+
+### Composition
+
+Practiced HAS-A relationships.
+
+Example:
+
+```text
+Computer HAS-A CPU
+```
+
+rather than:
+
+```text
+Computer IS-A CPU
+```
+
+### Applied Challenge – Export System
+
+Built a small export system using:
+
+* Base `Exporter` class
+* Multiple exporter subclasses
+* Method overriding
+* Polymorphism
+* Duck typing
+* `isinstance()`
+* `__str__`
+* Composition
+
+Different exporter objects process the same data in different ways.
+
+---
+
+# Key Skills Developed
+
+Across these labs, I practiced:
+
+* Python syntax
+* Variables and data types
+* Type conversion
+* String processing
+* Lists
+* Tuples
+* Sets
+* Dictionaries
+* Nested data structures
+* Conditions
+* Loops
+* Functions
+* Parameters and return values
+* Scope
+* `*args`
+* `**kwargs`
+* Comprehensions
+* `enumerate()`
+* `zip()`
+* Lambda functions
+* Sorting
+* Data cleaning
+* Object-oriented programming
+* Classes and objects
+* Inheritance
+* Polymorphism
+* Method overriding
+* Composition
+* Validation
+* Writing reusable code
+
+---
+
+# Repository Structure
+
+A possible repository structure is:
+
+```text
+python-fundamentals/
+│
+├── lab1/
+│   └── lesson1_exercises.py
+│
+├── lab2/
+│   └── collections_exercises.py
+│
+├── lab3/
+│   └── conditions_loops.py
+│
+├── lab4/
+│   └── functions.py
+│
+├── lab5/
+│   └── scope_args_kwargs.py
+│
+├── lab6/
+│   └── pythonic_data_processing.py
+│
+├── lab7/
+│   └── oop_fundamentals.py
+│
+├── lab8/
+│   └── inheritance.py
+│
+├── lab9/
+│   └── polymorphism_composition.py
+│
+└── README.md
+```
+
+---
+
+# Learning Journey
+
+The labs follow a gradual progression:
+
+```text
+Python Basics
+      ↓
+Collections
+      ↓
+Conditions & Loops
+      ↓
+Functions
+      ↓
+Scope & Flexible Arguments
+      ↓
+Pythonic Data Processing
+      ↓
+Classes & Objects
+      ↓
+Inheritance
+      ↓
+Polymorphism & Composition
+```
+
+This progression is helping me move from writing individual Python statements toward designing structured, reusable, and object-oriented programs.
+
+---
+
+# Technologies Used
+
+* Python 3
+* VS Code
+* Git
+* GitHub
+* Terminal
+* macOS
+
+
+---
 
 # Author
 
